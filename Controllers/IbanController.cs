@@ -22,9 +22,7 @@ namespace IbanValidator.Controllers
         {
             try
             {
-                var isValidIban = await _ibanValidator.IsValid(iban);
-
-                return isValidIban ? Ok(isValidIban) : BadRequest($"IBAN {iban} is invalid.");
+                return await _ibanValidator.Validate(iban);
             }
             catch(Exception ex)
             {

@@ -75,7 +75,7 @@ namespace IbanValidator.Services
         };
 
 
-        public Task<bool> IsValid(string iban)
+        public Task<bool> Validate(string iban)
         {
             if (string.IsNullOrWhiteSpace(iban))
                 throw new ArgumentNullException("IBAN can not be empty");

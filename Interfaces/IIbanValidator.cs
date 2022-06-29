@@ -2,6 +2,6 @@
 {
     public interface IIbanValidator
     {
-        Task<bool> IsValid(string iban);
+        Task<bool> Validate(string iban);
     }
 }
