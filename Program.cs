@@ -1,3 +1,6 @@
+using IbanValidator.Interfaces;
+using IbanValidator.Services;
+
 namespace IbanValidator
 {
     public class Program
@@ -12,6 +15,7 @@ namespace IbanValidator
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            builder.Services.AddTransient<IIbanValidator, Services.IbanValidator>();
 
             var app = builder.Build();
 

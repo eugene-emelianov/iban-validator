@@ -22,13 +22,13 @@ namespace IbanValidator.Controllers
         {
             try
             {
-                var isValid = await _ibanValidator.IsValid(iban);
+                var isValidIban = await _ibanValidator.IsValid(iban);
 
-                return isValid ? Ok(isValid) : BadRequest($"IBAN {iban} is invalid.");
+                return isValidIban ? Ok(isValidIban) : BadRequest($"IBAN {iban} is invalid.");
             }
             catch(Exception ex)
             {
-                return BadRequest(ex.Message);
+                return BadRequest($"IBAN {iban} is invalid. Validation error: {ex.Message}");
             }
         }
     }
