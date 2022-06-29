@@ -1,3 +1,4 @@
+using IbanValidator.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace IbanValidator.Controllers
@@ -6,20 +7,29 @@ namespace IbanValidator.Controllers
     [Route("[controller]")]
     public class IbanController : ControllerBase
     {
-       private readonly ILogger<IbanController> _logger;
+        private readonly IIbanValidator _ibanValidator;
+        private readonly ILogger<IbanController> _logger;
 
-        public IbanController(ILogger<IbanController> logger)
+        public IbanController(IIbanValidator ibanValidator, ILogger<IbanController> logger)
         {
+            _ibanValidator = ibanValidator;
             _logger = logger;
         }
 
         [Route("v1/{iban}/validate")]
         [HttpGet]
-        public ActionResult<bool> Validate(string iban)
+        public async Task<ActionResult<bool>> Validate(string iban)
         {
+            try
+            {
+                var isValid = await _ibanValidator.IsValid(iban);
 
-
-            return true;
+                return isValid ? Ok(isValid) : BadRequest($"IBAN {iban} is invalid.");
+            }
+            catch(Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
     }
 }
