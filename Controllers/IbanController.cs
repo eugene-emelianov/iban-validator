@@ -16,6 +16,11 @@ namespace IbanValidator.Controllers
             _logger = logger;
         }
 
+        /// <summary>
+        /// Validates IBAN numbers for more than 60 countries
+        /// </summary>
+        /// <param name="iban">IBAN</param>
+        /// <returns>True if the IBAN is valid and False otherwise</returns>
         [Route("v1/{iban}/validate")]
         [HttpGet]
         public async Task<ActionResult<bool>> Validate(string iban)

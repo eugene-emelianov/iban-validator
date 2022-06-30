@@ -7,6 +7,8 @@
     <UserSecretsId>07ce7990-ca52-4181-81ab-398fdebf0ac3</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <DockerfileContext>.</DockerfileContext>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <DocumentationFile>C:\Projects\IbanValidator\IbanValidator\bin\Debug\net6.0\ApiDoc.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

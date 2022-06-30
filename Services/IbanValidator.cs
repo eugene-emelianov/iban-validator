@@ -75,14 +75,22 @@ namespace IbanValidator.Services
         };
 
 
+        /// <summary>
+        /// Validates IBAN numbers for more than 60 countries
+        /// </summary>
+        /// <param name="iban">IBAN</param>
+        /// <returns>True if the IBAN is valid and False otherwise</returns>
         public Task<bool> Validate(string iban)
         {
+            // Validate if IBAN is null, empty or whitespace
             if (string.IsNullOrWhiteSpace(iban))
                 throw new ArgumentNullException("IBAN can not be empty");
 
+            // Validate if country code is available
             if (iban.Length < 2)
                 throw new ArgumentException($"Country code could not be determined from IBAN {iban}");
 
+            // Validate if country code is known
             var countryCode = iban[..2].ToUpper();
 
             var isCountryExists = _ibanLengthsByCountry.TryGetValue(countryCode, out int lengthByCountry);
@@ -90,12 +98,13 @@ namespace IbanValidator.Services
             if (!isCountryExists)
                 throw new ArgumentException($"Got unknow country code {countryCode}");
 
-            // Check length.
+            // Validate length.
             if (iban.Length < lengthByCountry || iban.Length > lengthByCountry)
                 throw new ArgumentException($"IBAN {iban} contains {iban.Length} digits. The expected number of digits for country code {countryCode} is {lengthByCountry}");
 
+            // Modulo 97 validation
             iban = iban.ToUpper();
-            var newIban = iban[4..] + iban[..4];
+            var newIban = $"{iban[4..]}{iban[..4]}";
 
             newIban = Regex.Replace(newIban, @"\D", match => (match.Value[0] - 55).ToString());
 
