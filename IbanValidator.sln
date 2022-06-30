@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32526.322
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IbanValidator", "IbanValidator.csproj", "{EBA75008-4650-41A0-B3B4-827B621AE575}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IbanValidator", "src\IbanValidator\IbanValidator.csproj", "{FD50DA03-77CD-47AB-9AB1-DF3DC2477202}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IbanValidator.Tests", "..\IbanValidator.Tests\IbanValidator.Tests.csproj", "{2948F169-BEA5-4320-BEF7-7E0DC0B807AE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IbanValidator.Tests", "tests\IbanValidator.Tests\IbanValidator.Tests.csproj", "{46B74589-735D-4379-9C61-7495B7BF3E25}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{EBA75008-4650-41A0-B3B4-827B621AE575}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EBA75008-4650-41A0-B3B4-827B621AE575}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EBA75008-4650-41A0-B3B4-827B621AE575}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EBA75008-4650-41A0-B3B4-827B621AE575}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2948F169-BEA5-4320-BEF7-7E0DC0B807AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2948F169-BEA5-4320-BEF7-7E0DC0B807AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2948F169-BEA5-4320-BEF7-7E0DC0B807AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2948F169-BEA5-4320-BEF7-7E0DC0B807AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD50DA03-77CD-47AB-9AB1-DF3DC2477202}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD50DA03-77CD-47AB-9AB1-DF3DC2477202}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD50DA03-77CD-47AB-9AB1-DF3DC2477202}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD50DA03-77CD-47AB-9AB1-DF3DC2477202}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46B74589-735D-4379-9C61-7495B7BF3E25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46B74589-735D-4379-9C61-7495B7BF3E25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46B74589-735D-4379-9C61-7495B7BF3E25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46B74589-735D-4379-9C61-7495B7BF3E25}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
