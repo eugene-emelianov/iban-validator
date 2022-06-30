@@ -28,7 +28,7 @@ namespace IbanValidator.Tests
         [Fact]
         public async Task ValidateIban_WhenIbanHasShortNumberOfDigits_ThenThrows()
         {
-            // Assert
+            // Arrange
             var iban = "BE1800165492356";
 
             // Act
@@ -42,7 +42,7 @@ namespace IbanValidator.Tests
         [Fact]
         public async Task ValidateIban_WhenIbanExceedsNumberOfDigits_ThenThrows()
         {
-            // Assert
+            // Arrange
             var iban = "BE180016549235656";
 
             // Act
@@ -56,7 +56,7 @@ namespace IbanValidator.Tests
         [Fact]
         public async Task ValidateIban_WhenModulo97ValidationFails_ThenThrows()
         {
-            // Assert
+            // Arrange
             var iban = "BE18001654923566";
 
             // Act

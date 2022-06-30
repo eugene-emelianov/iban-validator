@@ -25,7 +25,6 @@ namespace IbanValidator.Tests
             var sut = await _ibanController.Validate(iban);
 
             // Assert
-    
             Assert.False(sut.Value);
         }
 
