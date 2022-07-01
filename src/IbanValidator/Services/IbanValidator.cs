@@ -82,6 +82,9 @@ namespace IbanValidator.Services
         /// <returns>True if the IBAN is valid and False otherwise</returns>
         public Task<bool> Validate(string iban)
         {
+            // Replace spaces
+            iban = iban.Replace(" ", "");
+
             // Validate if IBAN is null, empty or whitespace
             if (string.IsNullOrWhiteSpace(iban))
                 throw new ArgumentNullException("IBAN can not be empty");

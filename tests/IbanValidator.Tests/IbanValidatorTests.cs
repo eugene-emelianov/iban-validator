@@ -106,5 +106,18 @@ namespace IbanValidator.Tests
             // Assert
             Assert.True(result);
         }
+
+        [Fact]
+        public async Task ValidateIban_WhenIbanNumberWithEmptySpaces_ThenIsValidTrue()
+        {
+            // Arrange
+            var iban = "GB82WEST 12345 698765432";
+
+            // Act
+            var result = await _ibanValidator.Validate(iban);
+
+            // Assert
+            Assert.True(result);
+        }
     }
 }
